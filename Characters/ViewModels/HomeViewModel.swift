@@ -30,14 +30,14 @@ final class HomeViewModel {
     func fetchCharacters(params: [String: String] = [:]) {
         
         Task {
-            var params1 = params
+            var params = params
             for filter in activeFilters {
-                params1["status"] = filter.rawValue.lowercased()
+                params["status"] = filter.rawValue.lowercased()
             }
 
             do {
                 updateState(to: .loading)
-                let result = try await networkService.fetchCharacters(params: params1)
+                let result = try await networkService.fetchCharacters(params: params)
                 self.characters = result.results
                 self.pageInfo = result.info
                 updateState(to: .none)
