@@ -7,25 +7,7 @@
 
 import Foundation
 
-//// MARK: - Welcome
-//struct Character: Codable {
-//    let id: Int
-//    let name, status, species, type: String
-//    let gender: String
-//    let origin, location: Location
-//    let image: String
-//    let episode: [String]
-//    let url: String
-//    let created: String
-//}
-//
-//// MARK: - Location
-//struct Location: Codable {
-//    let name: String
-//    let url: String
-//}
-//
-//
+
 enum CharacterFilter: String {
     case alive = "Alive"
     case dead = "Dead"
@@ -95,9 +77,6 @@ class JSONNull: Codable, Hashable {
     func hash(into hasher: inout Hasher) {
         hasher.combine(0)
     }
-//    public var hashValue: Int {
-//            return 0
-//    }
 
     public init() {}
 
